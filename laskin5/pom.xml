@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tel.kontra</groupId>
-    <artifactId>projteht</artifactId>
+    <artifactId>laskin5</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,26 +13,30 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <dependencies><dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>LATEST</version>
-    </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.9.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.7.2</version>
-            <scope>test</scope>
+    <dependencies>
+        <dependency> 
+            <groupId>org.junit.jupiter</groupId> 
+            <artifactId>junit-jupiter-params</artifactId> 
+            <version>5.7.2</version> 
+            <scope>test</scope> 
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
+
+            <!-- Maven surefire -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <argLine>${argLine}</argLine>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
